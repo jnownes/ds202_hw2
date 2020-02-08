@@ -96,4 +96,14 @@ The relationship is very strongly linear, however, there are few points visible 
 
 4. Are cars in 2008 more fuel efficient than cars in 1999? Use graphs *and* summary statistics to answer this question. Explain your findings.
 
+```{r}
+mpg$efficiency = (mpg$cty + mpg$hwy)/2
+mpg1999 = subset(mpg, year == 1999)
+mpg2008 = subset(mpg, year == 2008)
+hist(mpg1999$efficiency)
+hist(mpg2008$efficiency)
+```
+
+These histograms show that although there are more fuel efficient cars in 2008 than in 1999, the average efficiency of cars has not changed.The metric used to measure efficiency was an average of each car's miles per gallon in the city and their miles per gallon on the highway.
+
 Note: your submission is supposed to be fully reproducible, i.e. the TA and I will 'knit' your submission. Make sure that you don't use any file structure that depends on your computing environment.
